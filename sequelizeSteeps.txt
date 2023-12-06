@@ -12,3 +12,6 @@ new Sequelize(
      dialect: 'mysql' //dialecto
    }
  );
+
+ https://www.npmjs.com/package/sequelize-cli
+ https://sequelize.org/docs/v7/cli/#configuration
