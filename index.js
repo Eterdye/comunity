@@ -3,40 +3,14 @@ const app = express();
 const path = require("path");
 const bodyP = require("body-parser");
 const Sequelize = require("sequelize");
-const { DataTypes } = require("sequelize");
-const userModel = require("./models/User");
+const db = require("./models")
 
 const sequelize = new Sequelize("comunity", "admin", "010991", {
   host: "localhost",
   dialect: "mysql",
 });
 
-const User = sequelize.define("users", {
-  id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true,
-  },
-  name: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  lastname: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  taxt: {
-    type: DataTypes.STRING,
-    allowNull: false,
-
-  },
-  sex: {
-    type: DataTypes.CHAR,
-    allowNull: false,
-  },
-});
-
-
+const User = db.User;
 
 
 app.use(express.static(path.join(__dirname, "front")));

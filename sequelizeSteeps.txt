@@ -1,17 +1,56 @@
-1 - Crear base de datos 
-2 - Crear tabla
-3 - instalar sequelize con la dependencia segun la bvase de datos (mysql, sqlite, etc)
-4 - requrerir sequelize
-5 - instanciar sequelize pasando un objeto de configuracion
-new Sequelize(
-  'comunity', //nombre de la db
-  'admin', // nombre del usuario admin
-  '010991', // clave del admin
-   {
-     host: 'localhost', //host
-     dialect: 'mysql' //dialecto
-   }
- );
+
+1 - instalar sequelize con la dependencia segun la bvase de datos (mysql, sqlite, etc)
+
+2 -  instalar sequelize-cli que nos permite crear db, migraciones 
+  y modelos (con el comando npm i sequelize-cli --save-dev)
+
+3 - Ejecutamosm el comando npx sequelize init:config que crea 
+  el archivo config/config.json que tiene la configuracion para sequelize
+
+4 - Ejecutamos el comando npx sequelize db:create que crea la base de datos en base a la config
+
+5 - Ejecutamos npx sequelize init:migrations para iniciar las migracione que crean nuestras tablas
+
+6 - Ejecutamos por ejemplo :   sequelize migration:generate  --name nombre_tabla para crear una tabla
+
+7 - llenamos la migracion de la tabla ejemplo :
+
+  await queryInterface.createTable("users", { 
+      id: {
+       type: Sequelize.INTEGER,
+       autoIncrement: true,
+       allowNull: false,
+       primaryKey: true
+      },
+      name: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+    });
+
+
+8 - en la migracion descomentamos la linea que dice "await queryInterface.dropTable('users')" esto nos permite
+luego borrar lasm tablas generadas con el comando npx sequelize db:migrate:undo
+
+9 - AHora para jugar con nuestra base de datos necesitamos los modelos (representaciones de las tablas)
+hacemos sequelize init:models esto creara la carpeta modelos/index.js
+
+10 - Creamos nuestro primer modelo con el nombre de la tabla que creamos previamente en la migracion
+npx sequelize model:generate --name User --attributes name:string,lastName:string
+
+11 - Para usarlo en nuestro proyecto en el index hacemos 
+
+const Sequelize = require("sequelize");
+
+  const sequelize = new Sequelize("comunity", "admin", "010991", {
+    host: "localhost",
+    dialect: "mysql",
+  });
+
+12 - Si queremos usar un modelo basta con importar la base de datos que contiene todos los modelos 
+  const db = require("./models")
+
+  const user = db.User
 
  https://www.npmjs.com/package/sequelize-cli
  https://sequelize.org/docs/v7/cli/#configuration

@@ -30,6 +30,14 @@ module.exports = {
       gender: {
         type: Sequelize.CHAR,
         allowNull: false
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       }
     });
   },
@@ -39,7 +47,8 @@ module.exports = {
      * Add reverting commands here.
      *
      * Example:
-     * await queryInterface.dropTable('users');
      */
+
+    await queryInterface.dropTable('users');
   },
 };
