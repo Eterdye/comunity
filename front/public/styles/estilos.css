@@ -1,0 +1,498 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(242, 238, 231);
+}
+
+.header {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.logo-header {
+  border-radius: 10px;
+  width: 300px;
+  height: 40px;
+  position: relative;
+  top: 25px;
+  left: 50px;
+}
+
+.box-header {
+  background-color: rgb(24, 32, 57);
+  width: 100%;
+  height: 90px;
+  display: flex;
+}
+
+.login {
+  position: relative;
+  left: 25%;
+}
+
+@font-face {
+  font-family: "Montserrat Thin";
+  src: url(./tipografias/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Edu TAS Beginner";
+  src: url(./tipografias/EduTASBeginner-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Oswald ExtraLight";
+  src: url(./tipografias/Oswald-VariableFont_wght.ttf);
+}
+
+.opciones-childreen {
+  font-family: "Oswald ExtraLight";
+}
+
+/* Aqui modifico los estilos de la informacion general en el header */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.registro-formulario {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to top, transparent, rgb(24, 32, 57));
+  width: 500px;
+  height: 420px;
+  padding: 20px;
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+.registro-formulario h1 {
+  color: rgb(228, 221, 207);
+  margin: 0px 0px 20px;
+  font-family: "Oswald ExtraLight";
+}
+
+.registro-formulario p {
+  color: rgb(228, 221, 207);
+  font-family: "Oswald ExtraLight";
+  margin-bottom: 20px;
+}
+
+.registro-formulario .input-register {
+  width: 95%;
+  margin-bottom: 25px;
+  text-align: center;
+  color: rgb(228, 221, 207);
+  font-family: "Oswald ExtraLight";
+  font-weight: 700;
+}
+
+.input-register {
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgb(93, 114, 133);
+}
+
+.enviar {
+  padding: 10px;
+  margin-left: 40%;
+  background-color: rgb(38, 42, 58);
+  border: none;
+  color: rgb(228, 221, 207);
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Montserrat Thin";
+  margin-top: 10px;
+}
+
+.enviar:hover {
+  background-color: rgb(60, 63, 73);
+}
+
+.remenber-pass {
+  margin-top: 15px;
+  margin-left: 20%;
+}
+
+.btn-cose {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: transparent;
+  margin-left: 90%;
+  cursor: pointer;
+  border: none;
+}
+.arrow {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+.content-Info {
+  margin-left: auto;
+  margin-right: 15%;
+  padding: 10px;
+  height: 50px;
+  position: relative;
+  top: 15%;
+}
+
+.content-Info ul li a:hover {
+  transition: all ease 0.2s;
+
+  color: rgb(243, 237, 231);
+}
+
+.informationG .list-info {
+  list-style: none;
+  display: inline-block;
+  margin-left: 30px;
+}
+.informationG li a {
+  text-decoration: none;
+}
+.informationG li a {
+  color: rgb(210, 205, 198);
+  font-weight: 600;
+  font-size: 18px;
+  font-family: "Oswald ExtraLight";
+  margin: 10px;
+  display: block;
+}
+.informationG .list-info a:hover {
+  background-color: rgb(76, 83, 117);
+}
+
+.informationG > .list-info {
+  float: left;
+}
+
+.informationG .list-info ul {
+  display: none;
+  position: absolute;
+  min-width: 140px;
+}
+
+.informationG .list-info:hover > ul {
+  display: block;
+}
+
+.enlace-c {
+  color: #818fb4;
+}
+
+.caja-calles {
+  list-style: none;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(24, 32, 57);
+  border-radius: 8px;
+  overflow-y: auto;
+}
+/* Scroll de las calles */
+.caja-calles::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.caja-calles::-webkit-scrollbar:vertical {
+  width: 4px;
+}
+
+.caja-calles::-webkit-scrollbar-button:increment,
+.caja-calles ::-webkit-scrollbar-button {
+  display: none;
+}
+
+.caja-calles::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+.caja-calles::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+}
+
+.caja-calles::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Aqui agrego los estilos para el fondo de la pagina al inicio */
+
+.main-wallpaper {
+  width: 100%;
+  height: 600px;
+  background: url(../assets/General/photo_2023-11-12_11-48-30.jpg) center / 100%
+    100% no-repeat;
+}
+
+.p-reseña {
+  color: rgb(84, 77, 95);
+  font-family: "Edu TAS Beginner";
+  margin-left: 20px;
+  margin-right: 20px;
+  line-height: 2.1;
+}
+.image-main {
+  border-radius: 12px;
+  margin-bottom: 60px;
+  border: 2px solid black;
+}
+
+.reseña {
+  margin-top: 80px;
+  font-family: "Montserrat Thin";
+  font-weight: 400;
+  color: rgb(24, 32, 57);
+}
+
+.sitios {
+  font-family: "Montserrat Thin";
+}
+
+/* ubicacion del barrio virgen del valle  */
+
+.ubicacion {
+  width: 98%;
+  height: 500px;
+  margin: 15px;
+  background: url(../assets/maps.png) 30px / 50% no-repeat;
+}
+
+.p-ubicacion {
+  position: relative;
+  left: 60%;
+  top: 20%;
+  width: 300px;
+}
+
+.p-ubicacion h3 {
+  font-family: "Montserrat Thin";
+  font-size: 30px;
+}
+
+.p-ubicacion p {
+  margin-top: 8px;
+  display: inline-block;
+  font-family: "Montserrat Thin";
+  line-height: 1.3;
+}
+
+/* contacto */
+
+.contacto {
+  width: 100%;
+  height: 220px;
+  background-color: rgb(228, 221, 207);
+}
+
+.perfil {
+  width: 50px;
+  border-radius: 20px;
+}
+
+.pInfo {
+  width: 300px;
+  height: 60px;
+  padding: 10px;
+  display: flex;
+  position: relative;
+  left: 70%;
+}
+
+.pInfo p {
+  display: inline;
+  font-family: "Montserrat Thin";
+  padding: 5px;
+  line-height: 1.6;
+  margin-left: 10px;
+}
+
+.pInfo .name {
+  align-self: flex-start;
+}
+
+.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 35px;
+  right: 40px;
+  background-color: rgb(44, 53, 83);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.scroll-to-top:hover {
+  background-color: rgb(73, 79, 97);
+}
+
+.scroll-to-top span {
+  padding: 9px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.box-Sites {
+  width: 100%;
+  height: 510px;
+  background: url("../assets/TodasLasCalles/hernandez-acosta3.jpg") left / 50%
+    100% no-repeat;
+  background-color: rgb(24, 32, 57);
+  color: rgb(242, 238, 231);
+  font-family: "Montserrat Thin";
+}
+
+.information-Sites {
+  margin-top: 5%;
+  margin-right: 50px;
+  float: right;
+  width: 40%;
+  line-height: 1.7;
+}
+
+.networks-Links {
+  position: relative;
+  top: 50%;
+  width: 130px;
+  height: 80px;
+  margin: 30px;
+  font-family: "Oswald ExtraLight";
+  font-size: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.networks-Links a {
+  margin-top: auto;
+  margin-left: 10px;
+}
+
+.contact {
+  margin-left: 25px;
+}
+
+.rights {
+  font-family: "Oswald ExtraLight";
+  color: rgb(138, 137, 110);
+  display: inline;
+  margin-left: 10px;
+}
+
+.enlace {
+  position: relative;
+}
+
+.enlace::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: rgb(138, 137, 110);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.4s ease;
+}
+
+.enlace:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.site-b {
+  width: 100%;
+  height: 20%;
+}
+
+.b-Sites {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  padding: 12px;
+  background-image: url(../assets/next.svg);
+  position: relative;
+  top: 40%;
+  left: 10px;
+}
+
+.before {
+  transform: scaleX(-1);
+  position: relative;
+}
+
+.next {
+  left: 42%;
+}
+
+/* Tabla de usuarios  */
+
+.container {
+  border: solid 1px rgba(255, 255, 255, 0.2);
+}
+
+table {
+  color: #fff;
+  font-size: 14px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 60%;
+}
+
+thead {
+  background: rgba(44, 53, 83, 0.692);
+}
+
+th {
+  padding: 20px 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 15px;
+  border-bottom: solid 1px rgba(66, 61, 61, 0.397);
+  color: black;
+  font-family: "Montserrat Thin";
+}
+
+tbody tr {
+  cursor: pointer;
+}
+
+tbody tr:hover {
+  background: rgba(44, 53, 83, 0.308);
+}
+
+.generos{
+  color: #ffffff71;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+}
+

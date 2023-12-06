@@ -1,0 +1,14 @@
+1 - Crear base de datos 
+2 - Crear tabla
+3 - instalar sequelize con la dependencia segun la bvase de datos (mysql, sqlite, etc)
+4 - requrerir sequelize
+5 - instanciar sequelize pasando un objeto de configuracion
+new Sequelize(
+  'comunity', //nombre de la db
+  'admin', // nombre del usuario admin
+  '010991', // clave del admin
+   {
+     host: 'localhost', //host
+     dialect: 'mysql' //dialecto
+   }
+ );
