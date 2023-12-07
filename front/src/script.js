@@ -1,6 +1,7 @@
 import calles from "./sriptModule.js";
 import { openRegister, closeRegister } from "./scriptModules2.js";
 import './registerService.js'
+
 const $imageSection = document.getElementById("box-Sites");
 const buttonsS = document.querySelectorAll("#bScrool");
 const b_habitantes = document.querySelector("#btn-habitantes");

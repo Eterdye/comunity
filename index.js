@@ -4,7 +4,6 @@ const path = require("path");
 const bodyP = require("body-parser");
 const Sequelize = require("sequelize");
 const db = require("./models")
-
 const sequelize = new Sequelize("comunity", "admin", "010991", {
   host: "localhost",
   dialect: "mysql",

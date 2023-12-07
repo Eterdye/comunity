@@ -1,6 +1,18 @@
 import { post, get } from "./requestService.js";
 import validate from "./registerValidation.js";
 import { openRegister, closeRegister, clearInputs } from "./scriptModules2.js";
+const Toast = Sweetalert2.mixin({
+  toast: true,
+  position: "top-right",
+  showConfirmButton: false,
+  timer: 2000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Sweetalert2.stopTimer;
+    toast.onmouseleave = Sweetalert2.resumeTimer;
+  }
+});
+
 
 const cleanTable = () => {
   document.querySelector("tbody").innerHTML = "";
@@ -68,12 +80,9 @@ document.querySelector("#enviar").addEventListener("click", async () => {
     .then((json) => {
       insertObjectInTable(json);
       clearInputs()
-      Sweetalert2.fire({
-        position: "top",
+      Toast.fire({
         icon: "success",
-        title: "El registro se realizo con exito!",
-        showConfirmButton: false,
-        timer: 1500
+        title: "Usuario registrado con exito!"
       })
       closeRegister()
     })

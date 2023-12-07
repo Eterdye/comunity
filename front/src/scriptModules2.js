@@ -21,6 +21,7 @@ function openRegister() {
 }
 
 function closeRegister() {
+    clearInputs()
     let overlay = document.getElementById("registrationOverlay");
     let registrationForm = document.getElementById("registro-formulario");
 
@@ -28,8 +29,6 @@ function closeRegister() {
     registrationForm.style.display = "none";
     document.body.style.overflow = "auto";
 }
-
-
 
 
 //Lisstener//
