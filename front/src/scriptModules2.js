@@ -1,5 +1,4 @@
 const formRegister = document.querySelector('#formRegister')
-const vForm = document.querySelector('#close-r')
 const closeBtn = document.querySelector('#close-register')
 
 function openRegister() {
@@ -25,16 +24,11 @@ function closeRegister() {
 }
 
 
-function authenticate (evt) {
 
-    
-    
-}
 
 //Lisstener//
 closeBtn.addEventListener("click", closeRegister)
-vForm.addEventListener("click", authenticate)
 formRegister.addEventListener("click", openRegister)
 //
 
-export  { openRegister, closeRegister }
+export { openRegister, closeRegister }

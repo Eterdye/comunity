@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      taxt: {
+      ci: {
         type: DataTypes.STRING,
       },
       gender: {

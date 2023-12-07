@@ -23,7 +23,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      taxt: {
+      ci: {
         type: Sequelize.STRING,
         allowNull: false
       },

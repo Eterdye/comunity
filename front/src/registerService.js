@@ -1,4 +1,6 @@
 import { post, get } from "./requestService.js";
+import validate from "./registerValidation.js";
+import { openRegister, closeRegister } from "./scriptModules2.js";
 
 const cleanTable = () => {
   document.querySelector("tbody").innerHTML = "";
@@ -14,15 +16,15 @@ const destroy = (id) => {
 };
 
 const insertObjectInTable = (json) => {
-  const { name, lastname, taxt, sex, id } = json;
+  const { name, lastname, ci, gender, id } = json;
   const tr = document.createElement("tr");
 
   const content = `
         <td>${id}</td>
         <td>${name}</td>
         <td>${lastname}</td>
-        <td>${taxt}</td>
-        <td>${sex}</td>
+        <td>${ci}</td>
+        <td>${gender}</td>
     `;
   tr.innerHTML = content;
 
@@ -39,23 +41,41 @@ const insertObjectInTable = (json) => {
 
 document.querySelector("#enviar").addEventListener("click", async () => {
   const name = document.querySelector("#login").value;
-  const apellido = document.querySelector("#apellido").value;
+  const lastname = document.querySelector("#apellido").value;
   const ci = document.querySelector("#cedula").value;
   let gender = Array.from(
     document.querySelectorAll("input[type='radio']")
   ).find((item) => item.checked);
-  gender = gender?.value;
+  gender = gender ? gender.value : "M";
 
+  if (!validate({ name, lastname, ci, gender })) {
+    Sweetalert2.fire({
+      title: "Un error ha ocurrido!",
+      text: "Alguno de los datos es invalido",
+      icon: "error",
+    });
+
+    return;
+  }
+  
   post("/register", {
     name,
-    lastname: apellido,
-    taxt: ci,
-    sex: gender,
+    lastname,
+    ci,
+    gender,
   })
     .then((res) => res.json())
     .then((json) => {
       insertObjectInTable(json);
-    });
+      Sweetalert2.fire({
+        position: "top",
+        icon: "success",
+        title: "Your work has been saved",
+        showConfirmButton: false,
+        timer: 1500
+      })
+      closeRegister()
+    })
 });
 
 document.addEventListener("DOMContentLoaded", () => {
