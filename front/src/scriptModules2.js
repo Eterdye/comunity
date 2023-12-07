@@ -1,6 +1,12 @@
 const formRegister = document.querySelector('#formRegister')
 const closeBtn = document.querySelector('#close-register')
 
+function clearInputs(){
+     document.querySelector("#login").value = '';
+     document.querySelector("#apellido").value = '';
+     document.querySelector("#cedula").value = '';
+}
+
 function openRegister() {
     let overlay = document.getElementById("registrationOverlay");
     let registrationForm = document.getElementById("registro-formulario");
@@ -31,4 +37,4 @@ closeBtn.addEventListener("click", closeRegister)
 formRegister.addEventListener("click", openRegister)
 //
 
-export { openRegister, closeRegister }
+export { openRegister, closeRegister, clearInputs }

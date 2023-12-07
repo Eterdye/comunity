@@ -1,6 +1,6 @@
 import { post, get } from "./requestService.js";
 import validate from "./registerValidation.js";
-import { openRegister, closeRegister } from "./scriptModules2.js";
+import { openRegister, closeRegister, clearInputs } from "./scriptModules2.js";
 
 const cleanTable = () => {
   document.querySelector("tbody").innerHTML = "";
@@ -67,10 +67,11 @@ document.querySelector("#enviar").addEventListener("click", async () => {
     .then((res) => res.json())
     .then((json) => {
       insertObjectInTable(json);
+      clearInputs()
       Sweetalert2.fire({
         position: "top",
         icon: "success",
-        title: "Your work has been saved",
+        title: "El registro se realizo con exito!",
         showConfirmButton: false,
         timer: 1500
       })
