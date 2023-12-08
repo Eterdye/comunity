@@ -5,6 +5,7 @@ function clearInputs(){
      document.querySelector("#login").value = '';
      document.querySelector("#apellido").value = '';
      document.querySelector("#cedula").value = '';
+     document.querySelector("#userId").value = ''
 }
 
 function openRegister() {

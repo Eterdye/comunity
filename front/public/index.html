@@ -59,6 +59,14 @@
                 <h1>Hola ciudadano ¿Como estas?</h1>
                 <p>Registrate ahora, facil y rapido!</p>
                 <input
+                  type="hidden"
+                  name="userId"
+                  id="userId"
+                  placeholder="userId"
+                  autocomplete="off"
+                  maxlength="30"
+                />
+                <input
                   class="input-register"
                   type="text"
                   name="login"
@@ -213,7 +221,7 @@
                 <th class="t-p">Apellidos</th>
                 <th class="t-p">Cedula</th>
                 <th class="t-p">Genero</th>
-                <th class="t-p"><input type="text" class="search" placeholder="Buscar..." maxlength="20"></th>
+                <th class="t-p"><input type="text" class="search" placeholder="Buscar..." maxlength="20" id="search"></th>
               </tr>
             </thead>
             <tbody>

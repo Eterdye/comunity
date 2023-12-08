@@ -21,6 +21,15 @@ app.post("/register", async (req, res) => {
   return res.json(newUser);
 });
 
+app.post("/update", async (req, res) => {
+  const newUser = await User.findByPk(req.body.userId)
+
+  await newUser.update(req.body)
+  await newUser.save()
+
+  return res.json(newUser);
+});
+
 app.post("/user_destroy", async (req, res)=>{
   const { id } = req.body
   const user = await User.findByPk(id)
