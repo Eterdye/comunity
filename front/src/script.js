@@ -1,10 +1,10 @@
 import calles from "./sriptModule.js";
 import { openRegister, closeRegister } from "./scriptModules2.js";
 import './registerService.js'
-
 const $imageSection = document.getElementById("box-Sites");
 const buttonsS = document.querySelectorAll("#bScrool");
 const b_habitantes = document.querySelector("#btn-habitantes");
+const calles_scroll = document.getElementById('scrolls-calles')
 const buttonSTop = document.querySelector("#scrollBtn");
 const btnCalles = document.querySelectorAll("#btnCalles");
 
@@ -48,8 +48,10 @@ function updateImageLeft() {
 }
 
 // Scrolls de la pagina //
-function scrollToSection(sectionId) {
-  let targetElement = document.getElementById(sectionId);
+function scrollToSection(evt) {
+  const target = evt.target
+  
+  let targetElement = document.getElementById(target.name);
   if (targetElement) {
     window.scrollTo({
       top: targetElement.offsetTop,
@@ -79,9 +81,6 @@ function scrollToTop() {
 
 //Eventos de los botones//
 
-b_habitantes.addEventListener("click", () => {
-  scrollToSection("r-habitantes");
-});
 
 btnCalles.forEach((btn) => {
   btn.addEventListener("click", (evt) => {
@@ -91,15 +90,11 @@ btnCalles.forEach((btn) => {
 });
 
 buttonSTop.addEventListener("click", scrollToTop);
+b_habitantes.addEventListener("click", scrollToSection);
+buttonsS[0].addEventListener("click", scrollToSection)
+buttonsS[1].addEventListener("click", scrollToSection)
+calles_scroll.addEventListener("click", scrollToSection)
 
-buttonsS.forEach((b) =>
-  b.addEventListener("click", (evt) => {
-    if (evt.target.name === "reseñah") {
-      scrollToSection("reseñah");
-    } else if (evt.target.name === "informacionG") {
-      scrollToSection("informacionG");
-    }
-  })
-);
+
 
 // Fin de los scrolls //

@@ -335,8 +335,8 @@ body {
 .scroll-to-top {
   display: none;
   position: fixed;
-  bottom: 35px;
-  right: 40px;
+  bottom: 50px;
+  right: 55px;
   background-color: rgb(44, 53, 83);
   color: #fff;
   border: none;
@@ -496,3 +496,18 @@ tbody tr:hover {
   text-align: center;
 }
 
+.search{
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  height: 25px;
+  width: 110px;
+  outline-color:rgba(47, 47, 170, 0.63);
+  border: none;
+  border-radius: 3px;
+
+}
+
+.caja-calles li a {
+  cursor:auto;
+}
